@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAIL MARY SINALOA • 2026 | Proyecto Aeroespacial</title>
+    <!-- Tailwind CSS desde CDN estable -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0B0B0B',
+                            blue: '#0066FF',
+                            white: '#FFFFFF',
+                            gray: '#E6E6E6',
+                            card: '#141414'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Arial', 'sans-serif'],
+                        title: ['Bahnschrift', 'Arial Black', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Fondo espacial con estrellas en CSS puro */
+        body {
+            background-color: #0B0B0B;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,0.1) 1px, transparent 30px),
+                radial-gradient(#0066FF, rgba(0,102,255,0.15) 1px, transparent 20px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 100px 150px;
+            color: #FFFFFF;
+        }
+
+        /* Resplandor neón */
+        .glow-blue {
+            box-shadow: 0 0 25px rgba(0, 102, 255, 0.5);
+        }
+        .glow-text {
+            text-shadow: 0 0 15px rgba(0, 102, 255, 0.8);
+        }
+
+        /* Animación de flotado continuo del cohete */
+        @keyframes rocketFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+        }
+        .animate-float {
+            animation: rocketFloat 3.5s ease-in-out infinite;
+        }
+
+        /* Animación de pulso para el motor */
+        @keyframes thrusterPulse {
+            0%, 100% { opacity: 0.6; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.25); filter: drop-shadow(0 0 15px #0066FF); }
+        }
+        .animate-thruster {
+            animation: thrusterPulse 0.6s ease-in-out infinite alternate;
+            transform-origin: top center;
+        }
+
+        /* Tarjetas interactivas con movimiento */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            border-color: #0066FF;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+        }
+
+        /* Barras de progreso animadas en CSS puro */
+        @keyframes fillBar {
+            from { width: 0%; }
+        }
+        .bar-fill {
+            animation: fillBar 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-brand-blue/20 border border-brand-blue flex items-center justify-center font-bold text-brand-blue">
+                    🚀
+                </div>
+                <div>
+                    <div class="font-title font-bold text-lg text-white leading-none">HAIL MARY</div>
+                    <div class="text-[10px] text-brand-blue font-mono">SINALOA • 2026</div>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-title uppercase tracking-wider text-xs font-bold">
+                <a href="#inicio" class="text-white hover:text-brand-blue transition-colors">Inicio</a>
+                <a href="#reto" class="text-white hover:text-brand-blue transition-colors">El Reto</a>
+                <a href="#equipo" class="text-white hover:text-brand-blue transition-colors">Equipo</a>
+            </nav>
+
+            <a href="#reto" class="px-5 py-2 bg-brand-blue hover:bg-blue-600 text-white font-title text-xs font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-brand-blue/30">
+                VER MISIÓN
+            </a>
+        </div>
+    </header>
+
+    <!-- INICIO / HERO -->
+    <section id="inicio" class="min-h-screen pt-32 pb-16 flex items-center justify-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+            
+            <!-- Estatus -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-blue/10 border border-brand-blue/40 text-brand-blue text-xs font-mono mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-blue animate-ping"></span>
+                PROYECTO DE LANZAMIENTO AEROESPACIAL
+            </div>
+
+            <!-- EMBLEMA COHETE ANIMADO (SVG EMBEBIDO) -->
+            <div class="w-56 h-56 md:w-72 md:h-72 mb-8 animate-float relative">
+                <div class="absolute inset-0 rounded-full border border-brand-blue/30 animate-[spin_15s_linear_infinite]"></div>
+                
+                <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_0_20px_rgba(0,102,255,0.8)]">
+                    <!-- Fuego del motor -->
+                    <path class="animate-thruster" d="M90,145 L100,180 L110,145 Z" fill="#0066FF" />
+                    <!-- Estrellas -->
+                    <polygon points="50,60 52,65 57,67 52,69 50,74 48,69 43,67 48,65" fill="#FFFFFF" opacity="0.8"/>
+                    <polygon points="150,100 152,105 157,107 152,109 150,114 148,109 143,107 148,105" fill="#FFFFFF" opacity="0.7"/>
+                    <!-- Cohete -->
+                    <path d="M100,30 Q115,70 115,130 L85,130 Q85,70 100,30 Z" fill="#FFFFFF" stroke="#0B0B0B" stroke-width="3"/>
+                    <path d="M100,30 L100,130" stroke="#0066FF" stroke-width="2"/>
+                    <!-- Alerones -->
+                    <path d="M85,100 L68,135 L85,130 Z" fill="#0066FF"/>
+                    <path d="M115,100 L132,135 L115,130 Z" fill="#0066FF"/>
+                    <!-- Órbita -->
+                    <path d="M40,115 C70,140 130,140 160,100" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M45,117 C72,142 128,142 155,103" fill="none" stroke="#0066FF" stroke-width="2"/>
+                </svg>
+            </div>
+
+            <!-- Título Principal -->
+            <h1 class="text-4xl md:text-6xl font-title font-black tracking-tight mb-4 uppercase">
+                HAIL MARY <span class="text-brand-blue glow-text">SINALOA</span>
+            </h1>
+
+            <p class="text-base md:text-lg text-brand-gray/80 max-w-xl mb-10 leading-relaxed">
+                Proyecto de ingeniería dedicado al diseño, desarrollo computacional y pruebas de lanzamiento de cohetes experimentales.
+            </p>
+
+            <!-- Cifras del proyecto -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full p-6 rounded-2xl bg-brand-card/80 border border-white/10 backdrop-blur-sm">
+                <div class="text-center">
+                    <div class="text-2xl font-title font-bold text-brand-blue">2026</div>
+                    <div class="text-[10px] font-mono text-brand-gray/60 uppercase">Año Lanzamiento</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-title font-bold text-white">3,000m</div>
+                    <div class="text-[10px] font-mono text-brand-gray/60 uppercase">Altitud Meta</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-title font-bold text-brand-blue">4 Fases</div>
+                    <div class="text-[10px] font-mono text-brand-gray/60 uppercase">Desarrollo</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-title font-bold text-white">100%</div>
+                    <div class="text-[10px] font-mono text-brand-gray/60 uppercase">Ingeniería Sinaloa</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN: EL RETO -->
+    <section id="reto" class="py-24 px-6 border-t border-white/10 bg-brand-card/30">
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="text-center mb-16">
+                <span class="text-xs font-mono text-brand-blue tracking-widest uppercase">// FASES DEL PROYECTO</span>
+                <h2 class="text-3xl md:text-4xl font-title font-bold mt-1">EL RETO TÉCNICO</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <!-- Fase 1 -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-white/10 card-hover">
+                    <div class="text-3xl mb-4">💻</div>
+                    <div class="text-xs font-mono text-brand-blue font-bold mb-1">FASE 01</div>
+                    <h3 class="text-lg font-title font-bold mb-2">Simulación CFD</h3>
+                    <p class="text-xs text-brand-gray/70 mb-6 leading-relaxed">
+                        Análisis aerodinámico computacional para optimización del comportamiento de vuelo y estabilidad.
+                    </p>
+                    <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                        <div class="bg-brand-blue h-full bar-fill" style="width: 85%;"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-mono mt-2 text-brand-gray/50">
+                        <span>Progreso</span>
+                        <span class="text-brand-blue font-bold">85%</span>
+                    </div>
+                </div>
+
+                <!-- Fase 2 -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-white/10 card-hover">
+                    <div class="text-3xl mb-4">🔥</div>
+                    <div class="text-xs font-mono text-brand-blue font-bold mb-1">FASE 02</div>
+                    <h3 class="text-lg font-title font-bold mb-2">Motor & Propulsión</h3>
+                    <p class="text-xs text-brand-gray/70 mb-6 leading-relaxed">
+                        Pruebas de empuje en banco estático y formulación química para la etapa de ascenso.
+                    </p>
+                    <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                        <div class="bg-brand-blue h-full bar-fill" style="width: 60%;"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-mono mt-2 text-brand-gray/50">
+                        <span>Progreso</span>
+                        <span class="text-brand-blue font-bold">60%</span>
+                    </div>
+                </div>
+
+                <!-- Fase 3 -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-white/10 card-hover">
+                    <div class="text-3xl mb-4">📡</div>
+                    <div class="text-xs font-mono text-brand-blue font-bold mb-1">FASE 03</div>
+                    <h3 class="text-lg font-title font-bold mb-2">Aviónica & Telemetría</h3>
+                    <p class="text-xs text-brand-gray/70 mb-6 leading-relaxed">
+                        Electrónica de a bordo, recolección de datos de altitud y apertura de paracaídas.
+                    </p>
+                    <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                        <div class="bg-brand-blue h-full bar-fill" style="width: 40%;"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-mono mt-2 text-brand-gray/50">
+                        <span>Progreso</span>
+                        <span class="text-brand-blue font-bold">40%</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: EQUIPO -->
+    <section id="equipo" class="py-24 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="text-center mb-16">
+                <span class="text-xs font-mono text-brand-blue tracking-widest uppercase">// ESTRUCTURA DE TRABAJO</span>
+                <h2 class="text-3xl md:text-4xl font-title font-bold mt-1">ÁREAS DE TRABAJO</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <div class="p-6 rounded-2xl bg-brand-card border border-white/10 text-center card-hover">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-brand-blue/20 border border-brand-blue flex items-center justify-center text-2xl mb-4">
+                        🎯
+                    </div>
+                    <h3 class="font-title font-bold text-base mb-1">Dirección de Misión</h3>
+                    <div class="text-[10px] font-mono text-brand-blue mb-3">GESTIÓN Y ESTRATEGIA</div>
+                    <p class="text-xs text-brand-gray/60 leading-relaxed">
+                        Supervisión integral de tiempos, integración de subsistemas y protocolo de pruebas.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-brand-card border border-white/10 text-center card-hover">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-white/5 border border-white/20 flex items-center justify-center text-2xl mb-4">
+                        ⚙️
+                    </div>
+                    <h3 class="font-title font-bold text-base mb-1">Diseño Mecánico</h3>
+                    <div class="text-[10px] font-mono text-brand-blue mb-3">ESTRUCTURA Y MATERIALES</div>
+                    <p class="text-xs text-brand-gray/60 leading-relaxed">
+                        Construcción física del cuerpo del cohete, alerones y compartimento de carga.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-brand-card border border-white/10 text-center card-hover">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-white/5 border border-white/20 flex items-center justify-center text-2xl mb-4">
+                        💻
+                    </div>
+                    <h3 class="font-title font-bold text-base mb-1">Sistemas Electrónicos</h3>
+                    <div class="text-[10px] font-mono text-brand-blue mb-3">SOFTWARE Y SENSORES</div>
+                    <p class="text-xs text-brand-gray/60 leading-relaxed">
+                        Sistemas de comunicación por radiofrecuencia y monitoreo en tiempo real.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-8 border-t border-white/10 text-center text-xs text-brand-gray/50">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <strong class="text-white">HAIL MARY SINALOA</strong> • PROYECTO FINAL 2026
+            </div>
+            <div>
+                &copy; 2026 Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
